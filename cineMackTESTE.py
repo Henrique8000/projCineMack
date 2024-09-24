@@ -10,13 +10,19 @@
 
 menu_main = True
 menuF1S1 = True
+menuF1S2 = True
 
+# variáveis para o total de ingresos vendidos e do lucro total
 Qtd_total_ing = 0
 Val_total_ing = 0.00
 
-# variaveis opçao 1
+# variaveis de lugar por filme
 Qtd_LugarF1S1 = 50
+Qtd_LugarF1S2 = 50
+Qtd_LugarF2 = 40
+Qtd_LugarF3 = 30
 
+# variaveis opçao 1 (Filme 1 Sessão 1)
 Qtd_ingVipF1S1 = 0
 Qtd_ingIntF1S1 = 0
 Qtd_ingMeiaF1S1 = 0
@@ -24,6 +30,15 @@ Qtd_ingMeiaF1S1 = 0
 Val_ingVipF1S1 = 0.00
 Val_ingIntF1S1 = 0.00
 Val_ingMeiaF1S1 = 0.00
+
+# variaveis opcao 2 (Filme 1 Sessão 2)
+Qtd_ingVipF1S2 = 0
+Qtd_ingIntF1S2 = 0
+Qtd_ingMeiaF1S2 = 0
+
+Val_ingVipF1S2 = 0.00
+Val_ingIntF1S2 = 0.00
+Val_ingMeiaF1S2 = 0.00
 
 while menu_main:
     print("1. Comprar ingressos para Filme 1 - Sessão 1")
@@ -90,14 +105,72 @@ while menu_main:
                                 "\nImpossível realizar a compra! Tente comprar uma quantidade\nde ingresos proporcional ao total de lugares disponíveis"
                                 )
                         else:
-                            print("Insira uma opção válida!!!")
+                            print("Insira uma opção válida!!! (1 a 4)")
 
                     else:
                         print("\nSessão esgotada! Tente outra opção.\n")
                         break
 
     elif opcao_main == 2:
-        menu_main = False
+
+        if Qtd_LugarF1S2 > 0:
+
+            while menuF1S2:
+                print(f'\nAssentos disponíveis para Filme 1 - Sessão 2: {Qtd_LugarF1S2}')
+                print(f'Escolha o tipo de ingresso (1: Inteira, 2: Meia, 3: VIP, 4: Voltar):')
+                opcaoF1S2 = int(input(">>>"))
+
+                if opcaoF1S2 == 4:
+                    print("Retornando ao menu principal...")
+                    break
+                else:
+                    if Qtd_LugarF1S2 != 0:
+                        if opcaoF1S2 == 1:
+                            inteiraF1S2 = int(input("Quantos ingressos inteiros deseja comprar? "))
+                            if inteiraF1S2 <= Qtd_LugarF1S2:
+                                Qtd_LugarF1S2 -= inteiraF1S2
+                                Qtd_ingIntF1S2 += inteiraF1S2
+                                Val_ingIntF1S2 += inteiraF1S2 * 20.00
+                                Qtd_total_ing += inteiraF1S2
+                                Val_total_ing += Val_ingIntF1S2
+                                print("Compra bem sucedida!!! Aproveite o filme\n")
+                            else:
+                                print(
+                                    "\nImpossível realizar a compra! Tente comprar uma quantidade\nde ingresos proporcional ao total de lugares disponíveis"
+                                )
+                        elif opcaoF1S2 == 2:
+                            meiaF1S2 = int(input("Quantas meias você deseja comprar? "))
+                            if meiaF1S2 <= Qtd_LugarF1S2:
+                                Qtd_LugarF1S2 -= meiaF1S2
+                                Qtd_ingMeiaF1S2 += meiaF1S2
+                                Val_ingMeiaF1S2 += meiaF1S2 * 10.00
+                                Qtd_total_ing += meiaF1S2
+                                Val_total_ing += Val_ingMeiaF1S2
+                                print("Compra bem sucedida!!! Aproveite o filme\n")
+                            else:
+                                print(
+                                    "\nImpossível realizar a compra! Tente comprar uma quantidade\nde ingresos proporcional ao total de lugares disponíveis"
+                                )
+                        elif opcaoF1S2 == 3:
+                            vipF1S2 = int(input("Quantos ingressos VIP você deseja comprar?"))
+                            if vipF1S2 <= Qtd_LugarF1S2:
+                                Qtd_LugarF1S2 -= vipF1S2
+                                Qtd_ingVipF1S2 += vipF1S2
+                                Val_ingVipF1S2 += vipF1S2 * 30.00
+                                Qtd_total_ing += vipF1S2
+                                Val_total_ing += Val_ingVipF1S2
+                                print("Compra bem sucedida!!! Aproveite o filme\n")
+                            else:
+                                print(
+                                    "\nImpossível realizar a compra! Tente comprar uma quantidade\nde ingresos proporcional ao total de lugares disponíveis"
+                                )
+                        else:
+                            print("Insira uma opção válida!!! (1 a 4)")
+
+                    else:
+                        print("\nSessão esgotada! Tente outra opção.\n")
+                        break
+
     elif opcao_main == 8:
         print("*******  Relatório Final *******\n")
 
@@ -106,13 +179,29 @@ while menu_main:
         print(f"- Inteira:{Qtd_ingIntF1S1}")
         print(f"- VIP:{Qtd_ingVipF1S1}")
         print(f"- Meia:{Qtd_ingMeiaF1S1}\n")
-        print("Receita por tipo (Sessão 1):")
+
+        print("Receita por tipo (Filme 1 - Sessão 1):")
         print(f"- Inteira:{Val_ingIntF1S1:.2f}")
         print(f"- VIP:{Val_ingVipF1S1:.2f}")
         print(f"- Meia:{Val_ingMeiaF1S1:.2f}\n")
+
+        print("<<<<<< Filme 1 - Sessão 2: >>>>>>\n")
+        print("Quantidade de ingressos vendidos:")
+        print(f"- Inteira:{Qtd_ingIntF1S2}")
+        print(f"- VIP:{Qtd_ingVipF1S2}")
+        print(f"- Meia:{Qtd_ingMeiaF1S2}\n")
+
+        print("Receita por tipo (Filme 1 - Sessão 2):")
+        print(f"- Inteira:{Val_ingIntF1S2:.2f}")
+        print(f"- VIP:{Val_ingVipF1S2}")
+        print(f"- Meia:{Val_ingMeiaF1S2:.2f}\n")
+
+        print("<<<<<< Filme 2 - Sessão 1: >>>>>>\n")
 
         print(f"Total de ingressos vendidos: {Qtd_total_ing}")
 
         print(f"Receita total do dia: R${Val_total_ing:.2f}")
         break
 
+    else:
+        print("Digite uma opção válida!(1 - 8)\n")
