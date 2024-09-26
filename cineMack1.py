@@ -115,7 +115,7 @@ while menu_main:
                 opcaoF1S1 = int(input('>>>'))
 
                 if opcaoF1S1 == 4:
-                    print("Retornando ao menu principal...")
+                    print("\nRetornando ao menu principal...\n")
                     break
                 else:
                     if Qtd_LugarF1S1 != 0:
@@ -162,7 +162,7 @@ while menu_main:
                                 "\nImpossível realizar a compra! Tente comprar uma quantidade\nde ingresos proporcional ao total de lugares disponíveis"
                                 )
                         else:
-                            print("Insira uma opção válida!!! (1 a 4)")
+                            print("\nInsira uma opção válida!!! (1 a 4)\n")
 
                     else:
                         print("\nSessão esgotada! Tente outra opção.\n")
@@ -178,7 +178,7 @@ while menu_main:
                 opcaoF1S2 = int(input(">>>"))
 
                 if opcaoF1S2 == 4:
-                    print("Retornando ao menu principal...")
+                    print("\nRetornando ao menu principal...\n")
                     break
                 else:
                     if Qtd_LugarF1S2 != 0:
@@ -244,7 +244,7 @@ while menu_main:
                 opcaoF2S1 = int(input('>>>'))
 
                 if opcaoF2S1 == 4:
-                    print("Retornando ao menu principal...")
+                    print("\nRetornando ao menu principal...\n")
                     break
                 else:
                     if Qtd_LugarF2S1 != 0:
@@ -296,7 +296,7 @@ while menu_main:
                                 )
 
                         else:
-                            print("Insira uma opção válida!!! (1 a 4)")
+                            print("\nInsira uma opção válida!!! (1 a 4)\n")
 
                     else:
                         print("\nSessão esgotada! Tente outra opção.\n")
@@ -310,7 +310,7 @@ while menu_main:
                 print(f'Escolha o tipo de ingresso (1: Inteira, 2: Meia, 3: VIP, 4: Voltar):')
                 opcaoF2S2 = int(input(">>>"))
                 if opcaoF2S2 == 4:
-                    print("Retornando ao menu principal...")
+                    print("\nRetornando ao menu principal...\n")
                     break
 
                 else:
@@ -377,7 +377,7 @@ while menu_main:
                 print(f'Escolha o tipo de ingresso (1: Inteira, 2: Meia, 3: VIP, 4: Voltar):')
                 opcaoF3S1 = int(input(">>>"))
                 if opcaoF3S1 == 4:
-                    print("Retornando ao menu principal...")
+                    print("\nRetornando ao menu principal...\n")
                     break
 
                 else:
@@ -413,7 +413,7 @@ while menu_main:
                                 )
 
                         elif opcaoF3S1 == 3:
-                            vipF3S1 = int(input("Quantos ingressos VIP você deseja comprar? "))
+                            vipF3S1 = int(input("\nQuantos ingressos VIP você deseja comprar? "))
                             if vipF3S1 <= Qtd_LugarF3S1:
                                 Qtd_LugarF3S1 -= vipF3S1
                                 Qtd_ingVipF3S1 += vipF3S1
@@ -442,7 +442,7 @@ while menu_main:
                 print(f'Escolha o tipo de ingresso (1: Inteira, 2: Meia, 3: VIP, 4: Voltar):')
                 opcaoF3S2 = int(input(">>>"))
                 if opcaoF3S2 == 4:
-                    print("Retornando ao menu principal...")
+                    print("\nRetornando ao menu principal...\n")
                     break
 
                 else:
@@ -495,7 +495,7 @@ while menu_main:
                                 )
 
                         else:
-                            print("Insira uma opção válida!!! (1 a 4)")
+                            print("\nInsira uma opção válida!!! (1 a 4)\n")
 
         else:
             print("\nSessão esgotada! Tente outra opção.\n")
@@ -621,4 +621,4 @@ while menu_main:
         break
 
     else:
-        print("Digite uma opção válida!(1 - 8)\n")
+        print("\nDigite uma opção válida!(1 - 8)\n")
