@@ -17,6 +17,14 @@ menuF3S1 = True
 menuF3S2 = True
 menu_avaliacao = True
 
+filme2Ava = 0
+filme1Ava = 0
+filme3Ava = 0
+
+mediaf1 = 0
+mediaf2 = 0
+mediaf3 = 0
+
 # variáveis para o total de ingresos vendidos e do lucro total
 Qtd_total_ing = 0
 Val_total_ing = 0.00
@@ -115,7 +123,7 @@ while menu_main:
                 opcaoF1S1 = int(input('>>>'))
 
                 if opcaoF1S1 == 4:
-                    print("\nRetornando ao menu principal...\n")
+                    print("Retornando ao menu principal...")
                     break
                 else:
                     if Qtd_LugarF1S1 != 0:
@@ -162,7 +170,7 @@ while menu_main:
                                 "\nImpossível realizar a compra! Tente comprar uma quantidade\nde ingresos proporcional ao total de lugares disponíveis"
                                 )
                         else:
-                            print("\nInsira uma opção válida!!! (1 a 4)\n")
+                            print("Insira uma opção válida!!! (1 a 4)")
 
                     else:
                         print("\nSessão esgotada! Tente outra opção.\n")
@@ -178,7 +186,7 @@ while menu_main:
                 opcaoF1S2 = int(input(">>>"))
 
                 if opcaoF1S2 == 4:
-                    print("\nRetornando ao menu principal...\n")
+                    print("Retornando ao menu principal...")
                     break
                 else:
                     if Qtd_LugarF1S2 != 0:
@@ -244,7 +252,7 @@ while menu_main:
                 opcaoF2S1 = int(input('>>>'))
 
                 if opcaoF2S1 == 4:
-                    print("\nRetornando ao menu principal...\n")
+                    print("Retornando ao menu principal...")
                     break
                 else:
                     if Qtd_LugarF2S1 != 0:
@@ -296,7 +304,7 @@ while menu_main:
                                 )
 
                         else:
-                            print("\nInsira uma opção válida!!! (1 a 4)\n")
+                            print("Insira uma opção válida!!! (1 a 4)")
 
                     else:
                         print("\nSessão esgotada! Tente outra opção.\n")
@@ -310,7 +318,7 @@ while menu_main:
                 print(f'Escolha o tipo de ingresso (1: Inteira, 2: Meia, 3: VIP, 4: Voltar):')
                 opcaoF2S2 = int(input(">>>"))
                 if opcaoF2S2 == 4:
-                    print("\nRetornando ao menu principal...\n")
+                    print("Retornando ao menu principal...")
                     break
 
                 else:
@@ -377,7 +385,7 @@ while menu_main:
                 print(f'Escolha o tipo de ingresso (1: Inteira, 2: Meia, 3: VIP, 4: Voltar):')
                 opcaoF3S1 = int(input(">>>"))
                 if opcaoF3S1 == 4:
-                    print("\nRetornando ao menu principal...\n")
+                    print("Retornando ao menu principal...")
                     break
 
                 else:
@@ -413,7 +421,7 @@ while menu_main:
                                 )
 
                         elif opcaoF3S1 == 3:
-                            vipF3S1 = int(input("\nQuantos ingressos VIP você deseja comprar? "))
+                            vipF3S1 = int(input("Quantos ingressos VIP você deseja comprar? "))
                             if vipF3S1 <= Qtd_LugarF3S1:
                                 Qtd_LugarF3S1 -= vipF3S1
                                 Qtd_ingVipF3S1 += vipF3S1
@@ -442,7 +450,7 @@ while menu_main:
                 print(f'Escolha o tipo de ingresso (1: Inteira, 2: Meia, 3: VIP, 4: Voltar):')
                 opcaoF3S2 = int(input(">>>"))
                 if opcaoF3S2 == 4:
-                    print("\nRetornando ao menu principal...\n")
+                    print("Retornando ao menu principal...")
                     break
 
                 else:
@@ -495,7 +503,7 @@ while menu_main:
                                 )
 
                         else:
-                            print("\nInsira uma opção válida!!! (1 a 4)\n")
+                            print("Insira uma opção válida!!! (1 a 4)")
 
         else:
             print("\nSessão esgotada! Tente outra opção.\n")
@@ -517,7 +525,7 @@ while menu_main:
                 if filme1Ava < 1 or filme1Ava > 5:
                     print("\nAs notas devem estar dentro do intervalo de 1 a 5!\n")
                 else:
-                    cont_Ava_Filme1 += filme1Ava
+                    mediaf1 += filme1Ava
                     divisorMediF1 += 1
 
             elif opcao_avaliacao == 2:
@@ -525,21 +533,22 @@ while menu_main:
                 if filme2Ava < 1 or filme2Ava > 5:
                     print("\nAs notas devem estar dentro do intervalo de 1 a 5!\n")
                 else:
-                    cont_Ava_Filme2 += filme2Ava
+                    mediaf2 += filme2Ava
                     divisorMediF2 += 1
 
             elif opcao_avaliacao == 3:
-                filme3Ava = int(input("Avalie o Filme 2 (1 a 5 estrelas): "))
+                filme3Ava = int(input("Avalie o Filme 3 (1 a 5 estrelas): "))
                 if filme3Ava < 1 or filme3Ava > 5:
                     print("\nAs notas devem estar dentro do intervalo de 1 a 5!\n")
                 else:
-                    cont_Ava_Filme3 += filme3Ava
+                    mediaf3 += filme3Ava
                     divisorMediF3 += 1
 
             elif opcao_avaliacao == 4:
                 break
 
     elif opcao_main == 8:
+
         print("\n*******  Relatório Final *******\n")
 
         print("<<<<<< Filme 1 - Sessão 1: >>>>>>\n")
@@ -609,9 +618,23 @@ while menu_main:
         print(f"- Meia: R${Val_ingMeiaF3S2:.2f}")
 
         print("\nMédia de avaliações:")
-        print(f"Filme 1: {cont_Ava_Filme1 / divisorMediF1}")
-        print(f"Filme 2: {cont_Ava_Filme2 / divisorMediF2}")
-        print(f"Filme 3: {cont_Ava_Filme3 / divisorMediF3}")
+        if filme1Ava != 0:
+            calcf1 = mediaf1 / divisorMediF1
+            print(f"Filme 1: {calcf1}")
+        else:
+            print("\nNão foram inseridos dados para o Filme 1\n")
+
+        if filme2Ava != 0:
+            calcf2 = mediaf2 / divisorMediF2
+            print(f"Filme 2: {calcf2}")
+        else:
+            print("\nNão foram inseridos dados para o Filme 2\n")
+
+        if filme3Ava != 0:
+            calcf3 = mediaf3 / divisorMediF3
+            print(f"Filme 3: {calcf3}")
+        else:
+            print("\nNão foram inseridos dados para o filme 3\n")
 
         print(f"\nTotal de ingressos vendidos: {Qtd_total_ing}")
 
@@ -621,4 +644,4 @@ while menu_main:
         break
 
     else:
-        print("\nDigite uma opção válida!(1 - 8)\n")
+        print("Digite uma opção válida!(1 - 8)\n")
