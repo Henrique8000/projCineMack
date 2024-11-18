@@ -5,6 +5,16 @@ def main():
     filme2_ava = []
     filme3_ava = []
 
+    filme1_ing = {'preco_int': 20, 'preco_meia': 10, 'preco_vip': 30}
+    filme2_ing = {'preco_int': 15, 'preco_meia': 7.5, 'preco_vip': 22.5}
+    filme3_ing = {'preco_int': 10, 'preco_meia': 5, 'preco_vip': 15}
+
+    list_lugarf1 = [50, 50]
+    list_lugarf2 = [40, 40]
+    list_lugarf3 = [30, 30]
+
+    list_filme_ing = [filme1_ing, filme2_ing, filme3_ing]
+
     mediaf1 = 0
     mediaf2 = 0
     mediaf3 = 0
@@ -23,21 +33,27 @@ def main():
         opcao_main = int(input(">>>"))
 
         if opcao_main == 1:
+            compra_ing(list_lugarf1, list_filme_ing, opcao_main)
             pass
 
         elif opcao_main == 2:
+            compra_ing(list_lugarf1, list_filme_ing, opcao_main)
             pass
 
         elif opcao_main == 3:
+            compra_ing(list_lugarf2, list_filme_ing, opcao_main)
             pass
 
         elif opcao_main == 4:
+            compra_ing(list_lugarf2, list_filme_ing, opcao_main)
             pass
 
         elif opcao_main == 5:
+            compra_ing(list_lugarf3, list_filme_ing, opcao_main)
             pass
 
         elif opcao_main == 6:
+            compra_ing(list_lugarf3, list_filme_ing, opcao_main)
             pass
 
         elif opcao_main == 7:
@@ -50,6 +66,31 @@ def main():
 
         else:
             print("\nDigite uma opção válida!(1 - 8)\n")
+
+
+def compra_ing(list_lugar, list_filme_ing, op):
+    menu_filme = True
+    i = 0
+    if op == 1:
+        i = 0
+        if list_lugar[i] > 0:
+
+            while menu_filme:
+                pass
+
+    elif op == 2:
+        i = 1
+        if list_lugar[i] > 0:
+
+            while menu_filme:
+                pass
+
+    elif op == 3:
+        i = 2
+        if list_lugar[i] > 0:
+
+            while menu_filme:
+                pass
 
 
 def avaliar_filme(filme1_ava, filme2_ava, filme3_ava):
@@ -89,14 +130,12 @@ def avaliar_filme(filme1_ava, filme2_ava, filme3_ava):
 
 
 def relatorio_final(filme1_ava, mediaf1, filme2_ava, mediaf2, filme3_ava, mediaf3):
-
     print("\n*******  Relatório Final *******\n")
 
     print("<<<<<< Filme 1 - Sessão 1: >>>>>>\n")
     print("Quantidade de ingressos vendidos:")
 
     print("Receita por tipo (Filme 1 - Sessão 1):")
-
 
     print("\nMédia de avaliações:")
     if len(filme1_ava) != 0:
