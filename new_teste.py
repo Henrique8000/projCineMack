@@ -9,11 +9,12 @@ def main():
     filme2_ing = {'preco_int': 15, 'preco_meia': 7.5, 'preco_vip': 22.5}
     filme3_ing = {'preco_int': 10, 'preco_meia': 5, 'preco_vip': 15}
 
-    list_lugarf1 = [50, 50]
-    list_lugarf2 = [40, 40]
-    list_lugarf3 = [30, 30]
+    lugares1 = {"Filme1S1": 50, "Filme1S2": 50}
+    lugares2 = {"Filme2S1": 40, "Filme2S2": 40}
+    lugares3 = {"Filme3S1": 30, "Filme3S2": 30}
 
-    list_filme_ing = [filme1_ing, filme2_ing, filme3_ing]
+    ing_p_tp = {"Inteira": 0, "Meia": 0, "VIP": 0}
+    list_preco_ing = [filme1_ing, filme2_ing, filme3_ing]
 
     mediaf1 = 0
     mediaf2 = 0
@@ -33,27 +34,27 @@ def main():
         opcao_main = int(input(">>>"))
 
         if opcao_main == 1:
-            compra_ing(list_lugarf1, list_filme_ing, opcao_main)
+            compra_ing(lugares1, list_preco_ing, opcao_main)
             pass
 
         elif opcao_main == 2:
-            compra_ing(list_lugarf1, list_filme_ing, opcao_main)
+            compra_ing(lugares1, list_preco_ing, opcao_main)
             pass
 
         elif opcao_main == 3:
-            compra_ing(list_lugarf2, list_filme_ing, opcao_main)
+            compra_ing(lugares2, list_preco_ing, opcao_main)
             pass
 
         elif opcao_main == 4:
-            compra_ing(list_lugarf2, list_filme_ing, opcao_main)
+            compra_ing(lugares2, list_preco_ing, opcao_main)
             pass
 
         elif opcao_main == 5:
-            compra_ing(list_lugarf3, list_filme_ing, opcao_main)
+            compra_ing(lugares3, list_preco_ing, opcao_main)
             pass
 
         elif opcao_main == 6:
-            compra_ing(list_lugarf3, list_filme_ing, opcao_main)
+            compra_ing(lugares3, list_preco_ing, opcao_main)
             pass
 
         elif opcao_main == 7:
