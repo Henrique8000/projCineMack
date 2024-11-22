@@ -122,12 +122,18 @@ def compra_ing(n_indice, n_filme, n_sessao, lugares, poltrona, qtd_filmexsx, ing
         elif op_filmex_sx == 3 or op_filmex_sx == 2 or op_filmex_sx == 1:
             if lugares[n_indice] != 0:
                 if op_filmex_sx == 1:  #ingresso Inteiro
-
+                    menup1 = True
                     inteira = int(input("\nQuantos lugares você deseja comprar?: "))
                     for k in range(inteira):
                         n_cadeira = int(input("Insira o numero da cadeira que voce quer: "))
-                        indice = poltrona.index(n_cadeira)
-                        del (poltrona[indice])
+                        while menup1:
+                            if poltrona.count(n_cadeira) == 0:
+                                print("\nA cadeira está INDISPONÍVEL! Escolha outra\n")
+                                n_cadeira = int(input("Insira o numero da cadeira que voce quer: "))
+                            else:
+                                indice = poltrona.index(n_cadeira)
+                                del (poltrona[indice])
+                                break
 
                     if inteira <= lugares[n_indice]:
                         qtd_filmexsx[0] += inteira
@@ -144,11 +150,18 @@ def compra_ing(n_indice, n_filme, n_sessao, lugares, poltrona, qtd_filmexsx, ing
                         break
 
                 elif op_filmex_sx == 2:  #ingresso meia
+                    menup2 = True
                     meia = int(input("\nQuantos lugares você deseja comprar?: "))
                     for k in range(meia):
                         n_cadeira = int(input("Insira o numero da cadeira que voce quer: "))
-                        indice = poltrona.index(n_cadeira)
-                        del (poltrona[indice])
+                        while menup2:
+                            if poltrona.count(n_cadeira) == 0:
+                                print("\nA cadeira está INDISPONÍVEL! Escolha outra\n")
+                                n_cadeira = int(input("Insira o numero da cadeira que voce quer: "))
+                            else:
+                                indice = poltrona.index(n_cadeira)
+                                del (poltrona[indice])
+                                break
 
                     if meia <= lugares[n_indice]:
                         qtd_filmexsx[1] += meia
@@ -164,11 +177,18 @@ def compra_ing(n_indice, n_filme, n_sessao, lugares, poltrona, qtd_filmexsx, ing
                         break
 
                 elif op_filmex_sx == 3:  # ingresso vip
+                    menup3 = True
                     vip = int(input("\nQuantos lugares você deseja comprar?: "))
                     for k in range(vip):
                         n_cadeira = int(input("Insira o numero da cadeira que voce quer: "))
-                        indice = poltrona.index(n_cadeira)
-                        del (poltrona[indice])
+                        while menup3:
+                            if poltrona.count(n_cadeira) == 0:
+                                print("\nA cadeira está INDISPONÍVEL! Escolha outra\n")
+                                n_cadeira = int(input("Insira o numero da cadeira que voce quer: "))
+                            else:
+                                indice = poltrona.index(n_cadeira)
+                                del (poltrona[indice])
+                                break
 
                     if vip <= lugares[n_indice]:
                         qtd_filmexsx[2] += vip
