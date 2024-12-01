@@ -124,6 +124,11 @@ def compra_ing(n_indice, n_filme, n_sessao, lugares, poltrona, qtd_filmexsx, ing
                 if op_filmex_sx == 1:  #ingresso Inteiro
                     menup1 = True
                     inteira = int(input("\nQuantos lugares você deseja comprar?: "))
+
+                    while inteira > len(poltrona) or inteira <= 0:
+                        msg_aviso(f"Erro na compra! Você não pode escolher uma quantidade NULA de poltronas ou maior que {len(poltrona)}!\nTente novamente")
+                        inteira = int(input("\nQuantos lugares você deseja comprar?: "))
+
                     for k in range(inteira):
                         n_cadeira = int(input("Insira o numero da cadeira que voce quer: "))
                         while menup1:
@@ -152,6 +157,11 @@ def compra_ing(n_indice, n_filme, n_sessao, lugares, poltrona, qtd_filmexsx, ing
                 elif op_filmex_sx == 2:  #ingresso meia
                     menup2 = True
                     meia = int(input("\nQuantos lugares você deseja comprar?: "))
+
+                    while meia > len(poltrona) or meia <= 0:
+                        msg_aviso(f"Erro na compra! Você não pode escolher uma quantidade NULA de poltronas ou maior que {len(poltrona)}!\nTente novamente")
+                        meia = int(input("\nQuantos lugares você deseja comprar?: "))
+
                     for k in range(meia):
                         n_cadeira = int(input("Insira o numero da cadeira que voce quer: "))
                         while menup2:
@@ -179,12 +189,18 @@ def compra_ing(n_indice, n_filme, n_sessao, lugares, poltrona, qtd_filmexsx, ing
                 elif op_filmex_sx == 3:  # ingresso vip
                     menup3 = True
                     vip = int(input("\nQuantos lugares você deseja comprar?: "))
+
+                    while vip > len(poltrona) or vip <= 0:
+                        msg_aviso(f"Erro na compra! Você não pode escolher uma quantidade NULA de poltronas ou maior que {len(poltrona)}!\nTente novamente")
+                        vip = int(input("\nQuantos lugares você deseja comprar?: "))
+
                     for k in range(vip):
                         n_cadeira = int(input("Insira o numero da cadeira que voce quer: "))
                         while menup3:
                             if poltrona.count(n_cadeira) == 0:
                                 print("\nA cadeira está INDISPONÍVEL! Escolha outra\n")
                                 n_cadeira = int(input("Insira o numero da cadeira que voce quer: "))
+
                             else:
                                 indice = poltrona.index(n_cadeira)
                                 del (poltrona[indice])
